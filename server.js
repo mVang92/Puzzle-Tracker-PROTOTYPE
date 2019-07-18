@@ -13,11 +13,10 @@ if (process.env.NODE_ENV === "production") {
 
 app.use(routes);
 
-mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/puzzle_tracker"
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/puzzleTracker");
 
 app.listen(PORT, function() {
-    console.log("Server is listening on " + {PORT})
+    // console.log("Server is listening on " + {PORT}) // This returns [Object, Object]
+    console.log(`Server now listening on PORT ${PORT}!`);
 });
 console.log("Testing DB");
